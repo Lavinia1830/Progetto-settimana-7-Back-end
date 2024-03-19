@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CorsiController;
+use App\Http\Controllers\PrenotazioneController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,5 +31,14 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::resource('/activities', ActivityController::class);
+Route::get('/activities', [ActivityController::class, 'index'])
+    /* ->middleware(['auth', 'verified']) */
+    ->name('activities');
+
+Route::resource('/corsis', CorsiController::class);
+
+Route::resource('/prenotaziones', PrenotazioneController::class);
 
 require __DIR__.'/auth.php';

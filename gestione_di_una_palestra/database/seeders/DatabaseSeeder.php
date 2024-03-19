@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             UserSeeder::class,
             ActivitySeeder::class,
+            PrenotazioneSeeder::class,
             CorsiSeeder::class,
             
         ]);

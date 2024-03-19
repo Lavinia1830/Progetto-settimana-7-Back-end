@@ -4,22 +4,21 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Activity extends Model
+class Prenotazione extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-        'nome',
-        'descrizione',
-        'data',
-        'orario',
-        'durata',
-        'livello',
+        'user_id',
+        'corso_id',
+        'stato',
         'created_at',
         'updated_at'
     ];
-    public function reservations()
-    {
+
+    /* public function prenotaziones(): HasMany {
         return $this->hasMany(Prenotazione::class);
-    }
+    } */
 }

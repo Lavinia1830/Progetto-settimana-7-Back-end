@@ -13,7 +13,8 @@ class ActivityController extends Controller
      */
     public function index()
     {
-        //
+        $activities = Activity::all();
+        return view('activities', compact('activities'));
     }
 
     /**
@@ -37,7 +38,7 @@ class ActivityController extends Controller
      */
     public function show(Activity $activity)
     {
-        //
+        return view('activitiesDetail', ['activities' => $activity]);
     }
 
     /**
